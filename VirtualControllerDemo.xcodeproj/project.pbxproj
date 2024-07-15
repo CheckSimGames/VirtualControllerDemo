@@ -19,6 +19,7 @@
 		4DA881BF2C45E6B60019D4A9 /* VirtualControllerDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA881BE2C45E6B60019D4A9 /* VirtualControllerDemoUITests.swift */; };
 		4DA881C12C45E6B60019D4A9 /* VirtualControllerDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA881C02C45E6B60019D4A9 /* VirtualControllerDemoUITestsLaunchTests.swift */; };
 		4DA881CE2C45EC1B0019D4A9 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA881CD2C45EC1B0019D4A9 /* SpriteComponent.swift */; };
+		4DA881D02C45EC7D0019D4A9 /* TransformComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA881CF2C45EC7D0019D4A9 /* TransformComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		4DA881BE2C45E6B60019D4A9 /* VirtualControllerDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualControllerDemoUITests.swift; sourceTree = "<group>"; };
 		4DA881C02C45E6B60019D4A9 /* VirtualControllerDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualControllerDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4DA881CD2C45EC1B0019D4A9 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
+		4DA881CF2C45EC7D0019D4A9 /* TransformComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				4DA881A92C45E6B60019D4A9 /* LaunchScreen.storyboard */,
 				4DA881A42C45E6B40019D4A9 /* Main.storyboard */,
 				4DA881CD2C45EC1B0019D4A9 /* SpriteComponent.swift */,
+				4DA881CF2C45EC7D0019D4A9 /* TransformComponent.swift */,
 			);
 			path = VirtualControllerDemo;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			files = (
 				4DA881A12C45E6B40019D4A9 /* GameScene.swift in Sources */,
 				4DA881A32C45E6B40019D4A9 /* GameViewController.swift in Sources */,
+				4DA881D02C45EC7D0019D4A9 /* TransformComponent.swift in Sources */,
 				4DA881CE2C45EC1B0019D4A9 /* SpriteComponent.swift in Sources */,
 				4DA8819B2C45E6B40019D4A9 /* AppDelegate.swift in Sources */,
 			);
