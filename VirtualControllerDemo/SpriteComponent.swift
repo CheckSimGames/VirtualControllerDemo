@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import SpriteKit
+import GameplayKit
+
+class SpriteComponent: GKComponent {
+    var node = SKSpriteNode()
+}
