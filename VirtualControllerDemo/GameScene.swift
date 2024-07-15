@@ -7,6 +7,7 @@
 
 import SpriteKit
 import GameplayKit
+import GameController
 
 class GameScene: SKScene {
     
@@ -15,11 +16,30 @@ class GameScene: SKScene {
     
     private var lastUpdateTime : TimeInterval = 0
     
+    var virtualController: GCVirtualController?
+    
     override func sceneDidLoad() {
+        connectVirtualController()
         self.lastUpdateTime = 0
     }
     
+    func connectVirtualController() {
+        let controllerConfig = GCVirtualController.Configuration()
+        controllerConfig.elements = [GCInputDirectionPad]
+        
+        let controller = GCVirtualController(configuration: controllerConfig)
+        controller.connect()
+        virtualController = controller
+        
+        if let gamePad = virtualController?.controller?.extendedGamepad {
+            gamePad.dpad.valueChangedHandler = dPadHandler
+        }
+    }
     
+    let dPadHandler: GCControllerDirectionPadValueChangedHandler = { dPad, xValue, yValue in
+        
+        // Move the sprite by the amount of x and y values
+    }
     func touchDown(atPoint pos : CGPoint) {
 
     }
