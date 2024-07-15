@@ -104,15 +104,15 @@
 		4DA881992C45E6B40019D4A9 /* VirtualControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				4DA8819A2C45E6B40019D4A9 /* AppDelegate.swift */,
-				4DA8819C2C45E6B40019D4A9 /* GameScene.sks */,
 				4DA8819E2C45E6B40019D4A9 /* Actions.sks */,
+				4DA8819A2C45E6B40019D4A9 /* AppDelegate.swift */,
+				4DA881A72C45E6B60019D4A9 /* Assets.xcassets */,
+				4DA8819C2C45E6B40019D4A9 /* GameScene.sks */,
 				4DA881A02C45E6B40019D4A9 /* GameScene.swift */,
 				4DA881A22C45E6B40019D4A9 /* GameViewController.swift */,
-				4DA881CD2C45EC1B0019D4A9 /* SpriteComponent.swift */,
-				4DA881A42C45E6B40019D4A9 /* Main.storyboard */,
-				4DA881A72C45E6B60019D4A9 /* Assets.xcassets */,
 				4DA881A92C45E6B60019D4A9 /* LaunchScreen.storyboard */,
+				4DA881A42C45E6B40019D4A9 /* Main.storyboard */,
+				4DA881CD2C45EC1B0019D4A9 /* SpriteComponent.swift */,
 			);
 			path = VirtualControllerDemo;
 			sourceTree = "<group>";
