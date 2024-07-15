@@ -10,7 +10,7 @@ import GameplayKit
 import GameController
 
 class GameScene: SKScene {
-    
+    var player = Player()
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
@@ -19,8 +19,19 @@ class GameScene: SKScene {
     var virtualController: GCVirtualController?
     
     override func sceneDidLoad() {
+        placePlayer()
         connectVirtualController()
         self.lastUpdateTime = 0
+    }
+    
+    func placePlayer() {
+        // Center the player horizontally and place it 1/8 off the bottom of the screen.
+        let startX = size.width / 2
+        let startY = size.height / 8
+        
+        player.sprite.node.position = CGPoint(x: startX, y: startY)
+        player.sprite.node.entity = player
+        addChild(player.sprite.node)
     }
     
     func connectVirtualController() {
