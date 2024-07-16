@@ -49,11 +49,6 @@ class Player: GKEntity {
 
     func movePlayer(x: Float, y: Float) {
         transform.translate(CGVector(dx: Double(x), dy: Double(y)))
-        if let xValue = virtualController?.controller?.extendedGamepad?.leftThumbstick.xAxis.value,
-          let yValue = virtualController?.controller?.extendedGamepad?.leftThumbstick.yAxis.value {
-            
-            transform.translate(CGVector(dx: Double(xValue), dy: Double(yValue)))
-          }
     }
 
 }
