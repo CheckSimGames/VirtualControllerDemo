@@ -11,7 +11,6 @@ import GameplayKit
 class Player: GKEntity {
     let sprite = SpriteComponent()
     let transform = TransformComponent()
-    var score = 0
     
     override init() {
         super.init()
