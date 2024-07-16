@@ -30,9 +30,12 @@ class Player: GKEntity {
     }
     
     func connectVirtualController() {
+        // Specify the controls to place in the virtual controller.
+        // I'm keeping things simple with one joystick on the left.
         let controllerConfig = GCVirtualController.Configuration()
         controllerConfig.elements = [GCInputLeftThumbstick]
         
+        // Create and connect the virtual controller.
         let controller = GCVirtualController(configuration: controllerConfig)
         controller.connect()
         virtualController = controller
