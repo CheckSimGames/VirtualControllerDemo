@@ -42,15 +42,9 @@ class GameScene: SKScene {
         controller.connect()
         virtualController = controller
         
-        if let gamePad = virtualController?.controller?.extendedGamepad {
-            gamePad.dpad.valueChangedHandler = dPadHandler
-        }
+        // TODO: Get an event handler for the dpad working so I don't have to poll on every update.
     }
-    
-    let dPadHandler: GCControllerDirectionPadValueChangedHandler = { dPad, xValue, yValue in
         
-        // Move the sprite by the amount of x and y values
-    }
     func touchDown(atPoint pos : CGPoint) {
 
     }
@@ -87,7 +81,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        
+        movePlayer()
         // Initialize _lastUpdateTime if it has not already been
         if (self.lastUpdateTime == 0) {
             self.lastUpdateTime = currentTime
@@ -102,5 +96,13 @@ class GameScene: SKScene {
         }
         
         self.lastUpdateTime = currentTime
+    }
+    
+    func movePlayer() {
+        if let xValue = virtualController?.controller?.extendedGamepad?.dpad.xAxis.value,
+          let yValue = virtualController?.controller?.extendedGamepad?.dpad.yAxis.value {
+            
+            player.transform.translate(CGVector(dx: Double(xValue), dy: Double(yValue)))
+          }
     }
 }
