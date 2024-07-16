@@ -11,6 +11,7 @@ import GameController
 
 class Player: GKEntity {
     let sprite = SpriteComponent()
+    // The transform moves the player on the screen.
     let transform = TransformComponent()
     var virtualController: GCVirtualController?
     
