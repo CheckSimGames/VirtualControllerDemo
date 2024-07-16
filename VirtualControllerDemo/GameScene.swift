@@ -16,11 +16,10 @@ class GameScene: SKScene {
     
     private var lastUpdateTime : TimeInterval = 0
     
-    var virtualController: GCVirtualController?
+    
     
     override func sceneDidLoad() {
         placePlayer()
-        connectVirtualController()
         self.lastUpdateTime = 0
     }
     
@@ -33,16 +32,6 @@ class GameScene: SKScene {
         addChild(player.sprite.node)
     }
     
-    func connectVirtualController() {
-        let controllerConfig = GCVirtualController.Configuration()
-        controllerConfig.elements = [GCInputLeftThumbstick]
-        
-        let controller = GCVirtualController(configuration: controllerConfig)
-        controller.connect()
-        virtualController = controller
-        
-        // TODO: Get an event handler for the dpad working so I don't have to poll on every update.
-    }
         
     func touchDown(atPoint pos : CGPoint) {
 
@@ -80,7 +69,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        movePlayer()
+        player.movePlayer()
         // Initialize _lastUpdateTime if it has not already been
         if (self.lastUpdateTime == 0) {
             self.lastUpdateTime = currentTime
@@ -97,11 +86,4 @@ class GameScene: SKScene {
         self.lastUpdateTime = currentTime
     }
     
-    func movePlayer() {
-        if let xValue = virtualController?.controller?.extendedGamepad?.leftThumbstick.xAxis.value,
-          let yValue = virtualController?.controller?.extendedGamepad?.leftThumbstick.yAxis.value {
-            
-            player.transform.translate(CGVector(dx: Double(xValue), dy: Double(yValue)))
-          }
-    }
 }
