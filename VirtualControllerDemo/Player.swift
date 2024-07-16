@@ -37,10 +37,18 @@ class Player: GKEntity {
         controller.connect()
         virtualController = controller
         
-        // TODO: Get an event handler for the dpad working so I don't have to poll on every update.
+        // Set up the controller to move the player when they move the virtual joystick.
+        let movementHandler: GCControllerDirectionPadValueChangedHandler = { dPad, xValue, yValue in
+            self.movePlayer(x: xValue, y: yValue)
+        }
+        
+        if let gamePad = virtualController?.controller?.extendedGamepad {
+            gamePad.leftThumbstick.valueChangedHandler = movementHandler
+        }
     }
 
-    func movePlayer() {
+    func movePlayer(x: Float, y: Float) {
+        transform.translate(CGVector(dx: Double(x), dy: Double(y)))
         if let xValue = virtualController?.controller?.extendedGamepad?.leftThumbstick.xAxis.value,
           let yValue = virtualController?.controller?.extendedGamepad?.leftThumbstick.yAxis.value {
             
