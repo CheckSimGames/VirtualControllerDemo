@@ -16,8 +16,6 @@ class GameScene: SKScene {
     
     private var lastUpdateTime : TimeInterval = 0
     
-    
-    
     override func sceneDidLoad() {
         placePlayer()
         self.lastUpdateTime = 0
