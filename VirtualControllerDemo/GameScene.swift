@@ -36,7 +36,7 @@ class GameScene: SKScene {
     
     func connectVirtualController() {
         let controllerConfig = GCVirtualController.Configuration()
-        controllerConfig.elements = [GCInputDirectionPad]
+        controllerConfig.elements = [GCInputLeftThumbstick]
         
         let controller = GCVirtualController(configuration: controllerConfig)
         controller.connect()
@@ -99,8 +99,8 @@ class GameScene: SKScene {
     }
     
     func movePlayer() {
-        if let xValue = virtualController?.controller?.extendedGamepad?.dpad.xAxis.value,
-          let yValue = virtualController?.controller?.extendedGamepad?.dpad.yAxis.value {
+        if let xValue = virtualController?.controller?.extendedGamepad?.leftThumbstick.xAxis.value,
+          let yValue = virtualController?.controller?.extendedGamepad?.leftThumbstick.yAxis.value {
             
             player.transform.translate(CGVector(dx: Double(xValue), dy: Double(yValue)))
           }
